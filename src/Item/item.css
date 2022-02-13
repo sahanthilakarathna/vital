@@ -1,0 +1,15 @@
+.items{
+    margin: 50px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+
+}
+.name, .city, .dob, .age{
+    display: flex;
+    justify-content: left;
+}
+.image{
+    width: 100%;
+    height: 300px;
+}

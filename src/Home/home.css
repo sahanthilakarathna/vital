@@ -1,0 +1,13 @@
+.main{
+
+}
+.btns{
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 0.5rem;
+    justify-content: left;
+    margin: 50px;
+}
+.btns >button{
+    width: 200px;
+}

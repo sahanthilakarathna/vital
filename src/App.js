@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import  {Suspense,useState} from 'react';
 import './App.css';
+import Routes from "./Routes";
+// import Navigation from "./Navigation";
+import i18n from './i18n';
+import Loading from "./Loading";
+import LocaleContext from "./LocaleContext";
 
 function App() {
+    const [locale, setLocale] = useState(i18n.language);
+    console.log('lll',locale)
+    i18n.on('languageChanged', (lng) => setLocale(i18n.language));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <LocaleContext.Provider value={{locale,setLocale}}>
+        <Suspense fallback={<Loading/>}>
+        {/*<Navigation/>*/}
+      <Routes/>
+        </Suspense>
+        </LocaleContext.Provider>
     </div>
   );
 }
