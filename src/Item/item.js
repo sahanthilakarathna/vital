@@ -10,7 +10,7 @@ const Item = props =>{
     return(
         <div className={'main'}>
             <div>
-                <img className={'image'} src={data.picture.large} alt="image"/>
+                <img className={'image'} src={data.picture.large} alt={data.name.first}/>
             </div>
             <div className={'name'}>
                 <p>{t('Name')}:</p>
